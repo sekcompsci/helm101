@@ -1,0 +1,16 @@
+{{/*
+apiVersion: v1
+kind: Service
+metadata:
+  name: "{{ .Values.service.name }}-service"
+spec:
+  paths:
+    {{- range .Values.path }}
+    - {{ . }}
+    {{- end }}
+  services: 
+    {{- range .Values.services }}
+    - name: {{ .name }}
+      port: {{ .port }}
+    {{- end }}
+*/}}
